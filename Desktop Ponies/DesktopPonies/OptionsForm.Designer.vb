@@ -101,13 +101,28 @@ Partial Class OptionsForm
         Me.ShowPerformanceGraph = New System.Windows.Forms.CheckBox()
         Me.EnablePonyLogs = New System.Windows.Forms.CheckBox()
         Me.PoniesGroup = New System.Windows.Forms.GroupBox()
+        Me.DefaultProfileWarningLabel = New System.Windows.Forms.Label()
+        CType(Me.CursorAvoidanceRadius, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PonySpeechChance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MaxPonies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SizeScale, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ScreensaverGroup.SuspendLayout()
         Me.ScreensaverBackgroundTable.SuspendLayout()
+        CType(Me.Volume, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TimeScale, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WindowsGroup.SuspendLayout()
         Me.ScreenGroup.SuspendLayout()
         Me.ScreenCoveragePanel.SuspendLayout()
         Me.AvoidanceAreaTable.SuspendLayout()
+        CType(Me.ExclusionAreaHeight, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExclusionAreaWidth, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExculsionAreaX, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExclusionAreaY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ScreenAreaTable.SuspendLayout()
+        CType(Me.ScreenAreaHeight, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ScreenAreaWidth, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ScreenAreaX, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ScreenAreaY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SoundGroup.SuspendLayout()
         Me.MonitoringGroup.SuspendLayout()
         Me.PoniesGroup.SuspendLayout()
@@ -999,12 +1014,28 @@ Partial Class OptionsForm
         Me.PoniesGroup.TabStop = False
         Me.PoniesGroup.Text = "Ponies"
         '
+        'DefaultProfileWarningLabel
+        '
+        Me.DefaultProfileWarningLabel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DefaultProfileWarningLabel.AutoSize = True
+        Me.DefaultProfileWarningLabel.ForeColor = System.Drawing.Color.DarkRed
+        Me.DefaultProfileWarningLabel.Location = New System.Drawing.Point(567, 493)
+        Me.DefaultProfileWarningLabel.Name = "DefaultProfileWarningLabel"
+        Me.DefaultProfileWarningLabel.Size = New System.Drawing.Size(192, 13)
+        Me.DefaultProfileWarningLabel.TabIndex = 10
+        Me.DefaultProfileWarningLabel.Text = "Cannot save changes to default profile."
+        Me.DefaultProfileWarningLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.DefaultProfileWarningLabel.Visible = False
+        '
         'OptionsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(784, 512)
+        Me.Controls.Add(Me.DefaultProfileWarningLabel)
         Me.Controls.Add(Me.PoniesGroup)
         Me.Controls.Add(Me.MonitoringGroup)
         Me.Controls.Add(Me.SoundGroup)
@@ -1020,10 +1051,16 @@ Partial Class OptionsForm
         Me.Name = "OptionsForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Options - Desktop Ponies"
+        CType(Me.CursorAvoidanceRadius, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PonySpeechChance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MaxPonies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SizeScale, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ScreensaverGroup.ResumeLayout(False)
         Me.ScreensaverGroup.PerformLayout()
         Me.ScreensaverBackgroundTable.ResumeLayout(False)
         Me.ScreensaverBackgroundTable.PerformLayout()
+        CType(Me.Volume, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TimeScale, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WindowsGroup.ResumeLayout(False)
         Me.WindowsGroup.PerformLayout()
         Me.ScreenGroup.ResumeLayout(False)
@@ -1032,8 +1069,16 @@ Partial Class OptionsForm
         Me.ScreenCoveragePanel.PerformLayout()
         Me.AvoidanceAreaTable.ResumeLayout(False)
         Me.AvoidanceAreaTable.PerformLayout()
+        CType(Me.ExclusionAreaHeight, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExclusionAreaWidth, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExculsionAreaX, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExclusionAreaY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ScreenAreaTable.ResumeLayout(False)
         Me.ScreenAreaTable.PerformLayout()
+        CType(Me.ScreenAreaHeight, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ScreenAreaWidth, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ScreenAreaX, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ScreenAreaY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SoundGroup.ResumeLayout(False)
         Me.SoundGroup.PerformLayout()
         Me.MonitoringGroup.ResumeLayout(False)
@@ -1041,6 +1086,7 @@ Partial Class OptionsForm
         Me.PoniesGroup.ResumeLayout(False)
         Me.PoniesGroup.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents MonitorsSelection As System.Windows.Forms.ListBox
@@ -1122,4 +1168,5 @@ Partial Class OptionsForm
     Friend WithEvents OutOfBoundsWalk As System.Windows.Forms.RadioButton
     Friend WithEvents OutOfBoundsTeleport As System.Windows.Forms.RadioButton
     Friend WithEvents OutOfBoundsLabel As System.Windows.Forms.Label
+    Friend WithEvents DefaultProfileWarningLabel As Label
 End Class

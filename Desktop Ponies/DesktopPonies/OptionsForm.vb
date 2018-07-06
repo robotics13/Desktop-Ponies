@@ -1,4 +1,4 @@
-﻿Imports System.Globalization
+Imports System.Globalization
 
 Public Class OptionsForm
     Private Const PreviewMargin = 5
@@ -126,6 +126,12 @@ Public Class OptionsForm
                 ScreensaverImage.Checked = True
         End Select
 
+        If Options.ProfileName = Options.DefaultProfileName Then
+            DefaultProfileWarningLabel.Visible = True
+        Else
+            DefaultProfileWarningLabel.Visible = False
+        End If
+
         updatingFromOptions = False
     End Sub
 
@@ -160,7 +166,7 @@ Public Class OptionsForm
         End If
 
         If Options.ProfileName = Options.DefaultProfileName Then
-            MessageBox.Show(Me, "Cannot save over the '" & Options.DefaultProfileName & "' profile. Create a new profile first.",
+            MessageBox.Show(Me, "Cannot save over the '" & Options.DefaultProfileName & "' profile. Select a different or create a new profile on the main menu to save changes.",
                             "Invalid Profile Name", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
